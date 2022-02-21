@@ -1,0 +1,15 @@
+/*-----------------------------------------------*\
+    #typography
+\*-----------------------------------------------*/
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap");
+$font-primary: Rubik, sans-serif;
+
+// set the pages defualt fontsize
+html {
+  font-size: 100%;
+}
+
+body {
+  font-size: var(--primary-font) y;
+}
