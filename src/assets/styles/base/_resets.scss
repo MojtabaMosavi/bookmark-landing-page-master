@@ -1,0 +1,82 @@
+/*-----------------------------------------------*\
+    #resets 
+\*-----------------------------------------------*/
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+// support for html5 elemetns
+header,
+main,
+aside,
+footer,
+article,
+section {
+  display: block;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a,
+a:visited {
+  cursor: pointer;
+  text-decoration: none;
+  &:focus,
+  &:hover {
+    outline: max(1px, 0.1em) dashed var(--black);
+    outline-offset: 0.25rem;
+  }
+}
+
+// buttons get focus on upon tabing but not when hoverd
+button {
+  cursor: pointer;
+
+  &:focus {
+    outline: max(1px, 0.1em) dashed var(--black);
+    outline-offset: 0.25em;
+  }
+
+  &:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: max(1px, 0.1em) dashed var(--black);
+    outline-offset: 0.25em;
+  }
+}
+
+/* Remove all animations and transitions
+for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
