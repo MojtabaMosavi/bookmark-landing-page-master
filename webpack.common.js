@@ -8,7 +8,7 @@ module.exports = {
     
     // plugings---------------------------------- 
     plugins:[
-        new HtmlWebpackPlugin({template:"src/index.html", inject:true})
+        new HtmlWebpackPlugin({template:"./src/index.html", inject:true})
     ],
 
     // loader------------------------------------
@@ -16,7 +16,7 @@ module.exports = {
         rules:[
             // ES6----------------------------------
             {
-                test:/\.j[s|sx]$/i,
+                test:/\.(js|jsx)$/i,
                 exclude:/(node_modules)/,
                 use:[
                     {
@@ -30,9 +30,9 @@ module.exports = {
 
             // scss files----------------------------------
             {
-                test:/\.(scss|sass)$/i,
+                test:/\.s[a|c]ss$/i,
                 exclude:/(node_modules)/,
-                use:["style-loader","css-loader","scss-loader"]
+                use:["style-loader","css-loader","sass-loader"]
             },
 
             //images-----------------------------------
@@ -50,17 +50,16 @@ module.exports = {
         ]
     },
 
-    // output-----------------------------------
+/*     // output-----------------------------------
     output:{
         path:path.resolve(__dirname,"dist"),
         filename:"[name].bundle.[extension]",
-        clean:true,
-    },
+    }, */
 
     // extract duplicate dependencies into a seperate into a new chunck
-    optimization:{
+/*     optimization:{
         splitChunks:{
             chunks:"all",
         }
-    }
+    } */
 }

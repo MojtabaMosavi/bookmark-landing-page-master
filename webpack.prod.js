@@ -9,8 +9,13 @@ module.exports =merge(common,{
 
 
     plugins:[
-        new webpack.optimize.UglifyJsPlugin(),
-        // minimize the transformed assets
+        // minimize the transformed assets in prod mode 
        new  webpack.LoaderOptionsPlugin({minimize:true})
-    ]
+    ],
+
+    output:{
+        path:path.resolve(__dirname,"dist"),
+        filename:"[name][hash].bundle.js",
+        clean:true,
+    }
 })
