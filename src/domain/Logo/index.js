@@ -1,3 +1,4 @@
+import React from "react";
 import logo from "./logo-bookmark.svg";
 import PropTypes from "prop-types";
 import "./logo.scss";
@@ -5,7 +6,7 @@ import "./logo.scss";
 const Logo = (props) => {
     return (
         <a href="/" className={`"logo" ${props.isActive ? "logo--white" : ""}`}>
-            <image src={logo} alt="logo" className="logo__icon"/>
+            <img src={logo} alt="logo" className="logo__icon"/>
         </a>
     );
 }
