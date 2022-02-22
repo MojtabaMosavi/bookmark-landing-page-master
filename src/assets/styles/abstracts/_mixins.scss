@@ -7,7 +7,7 @@
 /// @param{string} $breakPoint
 /// name of variables referenced from breakPoints in _variables.scss
 @mixin respond-to($breakPoint) {
-  @media screen and (min-width: map-get($source:variables.$breakPoints,$key:$breakPoint)) {
+  @media screen and (min-width: map-get($map:variables.$breakPoints,$key:$breakPoint)) {
     @content;
   }
 }
