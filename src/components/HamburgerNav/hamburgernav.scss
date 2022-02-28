@@ -1,0 +1,96 @@
+@use "../../assets/styles/abstracts/functions" as *;
+@use "../../assets/styles/abstracts/mixins";
+@import "animate.css";
+
+.hamburger-nav {
+  width: rem(20px);
+  height: rem(20px);
+  border: none;
+  background-color: inherit;
+  position: relative;
+  @include mixins.flexify($al-con: center, $js-con: center);
+
+  &__bar {
+    display: block;
+    width: 100%;
+    height: rem(3px);
+    background: var(--black);
+    transition: background 300ms linear;
+  }
+
+  // top and middle bar
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: rem(3px);
+    left: 0;
+    background: var(--black);
+    transition: transform 500ms ease;
+  }
+
+  &::before {
+    top: rem(2px);
+  }
+
+  &::after {
+    top: rem(14px);
+  }
+
+  // hover state -------------------------------
+  &:hover:not(:active) {
+    &::before,
+    &::after {
+      transition: 300ms cubic-bezier(1, 0.43, 0, 1.14);
+    }
+    &::before {
+      top: rem(0px);
+    }
+    &::after {
+      top: rem(15px);
+    }
+  }
+
+  // active state --------------------------------
+  &--active {
+    .hamburger-nav__bar {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 100%;
+      background: transparent;
+      border: 2px solid var(--white);
+      padding: rem(14px);
+      transition: border 300ms linear;
+    }
+
+    &::after,
+    &::before {
+      transition: transform 500ms ease;
+      background: var(--white);
+    }
+    &::before {
+      transform: rotate(45deg) translate(5px, 4px);
+    }
+
+    &::after {
+      transform: rotate(138deg) translate(-4px, 4px);
+    }
+
+    // removing hover state----------------------------------
+    &:hover:not(:active) {
+      &::before {
+        top: rem(2px);
+      }
+
+      &::after {
+        top: rem(14px);
+      }
+    }
+  }
+
+  // removing the on afte first breakpoin tablet = 43em
+  @include mixins.respond-to("tablet") {
+    display: none;
+  }
+}

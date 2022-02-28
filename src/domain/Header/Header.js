@@ -12,6 +12,9 @@ const Header = () => {
         <header className="header">
             <div className="header__wrapper container">
                 <Logo isActive={false}/>
+                <HamburgerNav
+                classes={isActive}
+                 handleClick={() => setToggle(toggle => !toggle)}/>
             </div>
         </header>
     );
