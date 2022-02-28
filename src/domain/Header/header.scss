@@ -1,0 +1,9 @@
+@use "../../assets/styles/abstracts" as utils;
+
+.header {
+  &__wrapper {
+    @include utils.flexify($al-con: center, $js-con: space-between);
+    margin-top: 2.5rem;
+    padding: 0 0.3rem;
+  }
+}
