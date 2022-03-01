@@ -5,7 +5,7 @@ import "./logo.scss";
 
 const Logo = (props) => {
     return (
-        <a href="/" className={`"logo" ${props.isActive ? "logo--white" : ""}`}>
+        <a href="/" className={`logo ${props.isActive ? "logo--white" : ""}`}>
             <img src={logo} alt="logo" className="logo__icon"/>
         </a>
     );
