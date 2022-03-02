@@ -79,4 +79,70 @@
       margin-left: 2rem;
     }
   }
+
+  // tablet view ------------------------------------
+  @include respond-to("tablet") {
+    &__wrapper {
+      padding: 0;
+    }
+
+    &__menu-wrapper {
+      display: block;
+    }
+
+    &__menu {
+      @include flexify($al-con: center, $js-con: space-between);
+
+      & .header__item:last-child {
+        padding: 0;
+      }
+
+      & li:last-child > a {
+        padding: 15px 27px;
+        color: var(--white);
+        background: var(--soft-red);
+        transition: border, color, background-color 300ms ease-in-out;
+        border-radius: 0.5rem;
+
+        &:hover {
+          background: var(--white);
+          color: var(--soft-red);
+          border: 2px solid var(--soft-red);
+        }
+      }
+    }
+
+    &__item {
+      border: none;
+      padding: rem(18px) 0;
+
+      & + & {
+        margin-left: 1rem;
+      }
+    }
+
+    &__link {
+      color: var(--black);
+      font-size: rem(10px);
+      font-weight: 500;
+
+      &:hover {
+        color: var(--soft-red);
+      }
+    }
+
+    // hiding icon on none mobile nav
+    &__icons {
+      display: none;
+    }
+  }
+
+  // laptop view -------------------------------
+  @include respond-to("laptop") {
+    &__item {
+      & + & {
+        margin-left: 3rem;
+      }
+    }
+  }
 }
