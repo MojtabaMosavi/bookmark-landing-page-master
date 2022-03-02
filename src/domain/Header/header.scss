@@ -1,9 +1,82 @@
-@use "../../assets/styles/abstracts" as utils;
+@use "../../assets/styles/abstracts" as *;
 
 .header {
   &__wrapper {
-    @include utils.flexify($al-con: center, $js-con: space-between);
+    @include flexify($al-con: center, $js-con: space-between);
     margin-top: 2.5rem;
     padding: 0 0.3rem;
+  }
+
+  &__menu-wrapper {
+    display: none;
+
+    &--visible {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--very-dark-blue);
+      opacity: 0.9;
+      padding: rem(105px) rem(35px) 3rem rem(35px);
+      @include flexify(
+        $al-con: center,
+        $js-con: space-between,
+        $flex-d: column
+      );
+      animation: fadeIn;
+      animation-duration: 1s;
+      // disabling the scrolling when hamburgernav is visible
+    }
+  }
+
+  &__menu {
+    width: 100%;
+    text-align: center;
+
+    /* Since the Menu component is meant to be reusable,
+    *  specific selectors for the login link can't be hardcoded
+    *  instead these selector with higher specificity are used.
+    */
+    & .header__item:last-child {
+      padding: rem(26px) 0;
+    }
+
+    & li:last-child > a {
+      display: inline-block;
+      width: 100%;
+      border-radius: 0.3rem;
+      border: 2px solid white;
+      padding: rem(12px) 0;
+      font-weight: 700;
+    }
+  }
+
+  &__item {
+    border-top: 1px solid var(--grayish-blue);
+    padding: rem(21px) (10px) (20px) 0;
+  }
+
+  &__link {
+    color: var(--white);
+    text-transform: uppercase;
+    font-size: rem(20px);
+    letter-spacing: 3px;
+  }
+
+  &__icons {
+    @include flexify($al-con: center, $js-con: space-between);
+
+    &-item {
+      &:hover {
+        animation: tada;
+        animation-duration: 1s;
+      }
+    }
+
+    &-item + &-item {
+      margin-left: 2rem;
+    }
   }
 }

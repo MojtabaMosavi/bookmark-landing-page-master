@@ -5,6 +5,18 @@ module.exports = {
     entry:{
         index:"./src/index.js"
     },
+
+    // aliases
+    resolve:{
+
+        alias:{        
+            extensions:['js','jsx','ts','tsx',"svg"],
+            root:path.resolve("./src"),
+            Components: path.resolve(__dirname,"src/components"),
+            Images: path.resolve(__dirname,"src/assets/images"),
+
+        }
+    },
     
     // plugings---------------------------------- 
     plugins:[
@@ -49,17 +61,4 @@ module.exports = {
             }
         ]
     },
-
-/*     // output-----------------------------------
-    output:{
-        path:path.resolve(__dirname,"dist"),
-        filename:"[name].bundle.[extension]",
-    }, */
-
-    // extract duplicate dependencies into a seperate into a new chunck
-/*     optimization:{
-        splitChunks:{
-            chunks:"all",
-        }
-    } */
 }

@@ -8,6 +8,7 @@
   border: none;
   background-color: inherit;
   position: relative;
+  z-index: 10;
   @include mixins.flexify($al-con: center, $js-con: center);
 
   &__bar {
