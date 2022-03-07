@@ -12,9 +12,11 @@
   --very-dark-blue: hsl(229, 31%, 21%);
   --black: hsl(0, 0%, 0%);
   --white: hsl(0, 100%, 100%);
+  --bg-firefox: #eeeeee;
 
   // fonts
   --primary-font: Rubik, sans-serif;
+  --tf-ease-in-out: cubic-bezier(0.79, 0.14, 0.15, 0.86);
 }
 
 // breakpoint

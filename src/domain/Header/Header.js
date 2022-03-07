@@ -13,7 +13,6 @@ const icons = [{name:"facebook",icon:facebook},{name:"twitter",icon:twitter}]
 
 const Header = () => {
     const [toggle,setToggle] = useState(false);
-
     useEffect(() => {
         document.body.classList.toggle("no-y-scroll",toggle);
     },[toggle]);

@@ -1,10 +1,12 @@
 import React, { Fragment } from "react";
 import Header from "./domain/Header/Header";
+import Main from "./domain/Main/Main";
 
 function App() {
     return (
         <Fragment>
-            <Header />
+            <Header/>
+            <Main/>
         </Fragment>
     );
 }

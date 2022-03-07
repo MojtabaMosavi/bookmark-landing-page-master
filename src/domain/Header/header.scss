@@ -3,7 +3,7 @@
 .header {
   &__wrapper {
     @include flexify($al-con: center, $js-con: space-between);
-    margin-top: 2.5rem;
+    margin: 2.5rem 0 rem(76px) 0;
     padding: 0 0.3rem;
   }
 
@@ -27,7 +27,7 @@
       );
       animation: fadeIn;
       animation-duration: 1s;
-      // disabling the scrolling when hamburgernav is visible
+      z-index: 5;
     }
   }
 
@@ -84,6 +84,7 @@
   @include respond-to("tablet") {
     &__wrapper {
       padding: 0;
+      margin-bottom: rem(99px);
     }
 
     &__menu-wrapper {
