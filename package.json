@@ -45,7 +45,7 @@
         "Components(.*)$": "<rootDir>/src/components/$1",
         "Images(.*)$": "<rootDir>/src/assets/images/$1"
       },
-      "setupFilesAfterEnv": ["<rootDir>src/setupTests.js"],
+      "setupFilesAfterEnv": ["<rootDir>src/setupTest.js"],
       "moduleDirectories": [".","node_modules"]
 
   }
