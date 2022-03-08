@@ -5,6 +5,7 @@
   display: grid;
   grid-template: [row1-start] "pic" 1fr [row1-end] [row1-start] "content" 0.5fr [row1-end] / 1fr;
   grid-gap: rem(34px) 0;
+  margin-bottom: rem(144px);
 
   &__content {
     grid-area: content;

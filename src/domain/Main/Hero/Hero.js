@@ -4,7 +4,7 @@ import "./hero.scss";
 
 const Hero = () => {
     return (
-        <section className="hero">
+        <section className="hero container">
             <article className="hero__content">
                 <h1 className="hero__heading">A Simple Bookmark Manager</h1>
                 <p className="hero__text">  A clean and simple interface to organize your favourite websites. 
