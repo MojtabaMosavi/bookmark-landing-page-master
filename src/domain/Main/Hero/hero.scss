@@ -18,8 +18,8 @@
   }
 
   &__text {
-    line-height: 25px;
-    padding: 0 18px;
+    line-height: rem(25px);
+    padding: 0 rem(18px);
     font-size: rem(15px);
     margin-bottom: 2rem;
     color: var(--grayish-blue);
@@ -96,11 +96,11 @@
       content: "";
       position: absolute;
       width: 81%;
-      height: 35%;
-      top: 9%;
+      height: 53vw;
+      top: 13vw;
       right: 0;
       background: var(--soft-blue);
-      border-bottom-left-radius: 98px;
+      border-bottom-left-radius: rem(98px);
       z-index: -1;
     }
   }
@@ -114,8 +114,9 @@
   @include respond-to("tablet") {
     &__img-wrapper {
       &::after {
-        top: 25%;
-        width: 74%;
+        height: rem(338px);
+        width: 68%;
+        top: 8rem;
       }
     }
   }
@@ -130,17 +131,17 @@
     }
 
     &__heading {
-      font-size: 47px;
-      margin-bottom: 17px;
+      font-size: rem(47px);
+      margin-bottom: rem(17px);
     }
 
     &__text {
-      font-size: 18px;
+      font-size: rem(18px);
       padding: 0;
-      margin-bottom: 38px;
-      max-width: 500px;
-      line-height: 27px;
-      margin-bottom: 33px;
+      margin-bottom: rem(38px);
+      max-width: rem(500px);
+      line-height: rem(27px);
+      margin-bottom: rem(33px);
     }
 
     &__cta-wrapper {
@@ -159,8 +160,8 @@
       &::after {
         content: "";
         width: 43%;
-        height: 47%;
-        top: 40%;
+        top: 9rem;
+        height: rem(290px);
       }
     }
   }
@@ -169,10 +170,10 @@
   @include respond-to("desktop") {
     &__img-wrapper {
       &::after {
-        height: 77%;
-        width: 35%;
-        top: 30%;
-        border-bottom-left-radius: rem(152px);
+        height: rem(316px);
+        width: 37%;
+        border-bottom-left-radius: 9.5rem;
+        top: 8rem;
       }
     }
 
