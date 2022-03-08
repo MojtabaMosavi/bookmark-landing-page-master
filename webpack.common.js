@@ -14,6 +14,7 @@ module.exports = {
             root:path.resolve("./src"),
             Components: path.resolve(__dirname,"src/components"),
             Images: path.resolve(__dirname,"src/assets/images"),
+            Domain:path.resolve(__dirname,"src/domain")
 
         }
     },
