@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "./Hero/Hero";
 import Features from "./Features/Features";
+import Extensions from "./extensions/Extension";
 import "./main.scss";
 
 const Main = () => {
@@ -9,6 +10,7 @@ const Main = () => {
             <div className="main__wrapper">
                 <Hero/>
                 <Features/>
+                <Extensions/>
             </div>
         </main>
     );

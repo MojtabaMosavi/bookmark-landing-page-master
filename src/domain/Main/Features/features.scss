@@ -3,6 +3,7 @@
 
 .features {
   text-align: center;
+  margin-bottom: rem(131px);
 
   &__content {
     margin-bottom: rem(40px);
@@ -31,5 +32,10 @@
       line-height: 1.5;
       font-size: rem(18px);
     }
+  }
+
+  // laptop-----------------------------------------------------------------------------
+  @include respond-to("laptop") {
+    margin-bottom: 15.1875rem;
   }
 }
