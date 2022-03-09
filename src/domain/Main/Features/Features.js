@@ -1,4 +1,5 @@
 import React from "react";
+import Slider from "Components/Slider/slider";
 import data from "./Feature-data";
 import "./features.scss";
 
@@ -12,6 +13,7 @@ const Features = () => {
                     favourite websites. Your bookmarks sync between your devices so you can access them on the 
                     go.</p>
                 </div>
+                <Slider data={data}/>
             </div>
         </section>
     );

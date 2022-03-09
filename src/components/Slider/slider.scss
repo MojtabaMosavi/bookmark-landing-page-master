@@ -1,0 +1,145 @@
+@use "../../assets/styles/abstracts/functions" as *;
+@use "../../assets/styles/abstracts/mixins" as *;
+
+.slider {
+  &__pignation {
+    margin-bottom: rem(75px);
+    max-width: rem(311px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__track-wrapper {
+    position: relative;
+  }
+  &__track {
+    &::before {
+      content: "";
+      position: absolute;
+      width: 68%;
+      height: 52vw;
+      top: rem(32px);
+      left: 0;
+      background: var(--soft-blue);
+      border-bottom-right-radius: rem(98px);
+      z-index: -1;
+    }
+  }
+
+  & &__search-wrapper:last-child {
+    border-bottom: 1px solid var(--grayish-blue);
+  }
+
+  &__search-wrapper {
+    border-top: 1px solid var(--grayish-blue);
+  }
+
+  &__search {
+    color: var(--grayish-blue);
+    font-size: rem(18px);
+    padding: rem(17.5px) 2rem;
+    width: 100%;
+    border: none;
+    background: transparent;
+    transition: color 300ms ease-in-out;
+    position: relative;
+
+    // the underline, initialy hidden
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      width: 0%;
+      height: 4px;
+      background: var(--soft-red);
+      transform: translate(-50%, -100%);
+      transition: width 500ms ease-in-out;
+    }
+
+    &:hover {
+      color: var(--soft-red);
+    }
+
+    // applies the underline only when clicked
+    &--selected {
+      @extend .slider__search;
+      color: var(--vary-dark-blue);
+      &::after {
+        width: 44%;
+      }
+
+      &:hover &:not(:active) {
+        &::after {
+          width: 0;
+        }
+      }
+    }
+  }
+
+  // tablet view ------------------------------------------------------
+  @include respond-to("tablet") {
+    &__pignation {
+      border-bottom: 1px solid var(--grayish-blue);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 39rem;
+    }
+
+    & &__search-wrapper:last-child {
+      border: none;
+    }
+
+    &__search-wrapper {
+      border: none;
+    }
+
+    &__track {
+      &::before {
+        width: 40%;
+        height: rem(200px);
+        top: 3rem;
+      }
+    }
+
+    &__search {
+      padding: rem(30px) rem(20px);
+      &-wrapper {
+        flex: 1;
+      }
+      &--selected {
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  // laptop view ---------------------------------------------------
+  @include respond-to("laptop") {
+    &__pignation {
+      margin-bottom: rem(71px);
+      max-width: rem(730px);
+    }
+
+    &__track {
+      &::before {
+        width: 40%;
+        height: 18rem;
+      }
+    }
+  }
+
+  // deskotp-----------------------------------------------------------
+  @include respond-to("desktop") {
+    &__track {
+      &::before {
+        width: 44%;
+        height: 22rem;
+        top: 5rem;
+        border-bottom-right-radius: rem(165px);
+      }
+    }
+  }
+}
