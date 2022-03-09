@@ -1,0 +1,35 @@
+@use "../../../assets/styles/abstracts/functions" as *;
+@use "../../../assets/styles/abstracts/mixins" as *;
+
+.features {
+  text-align: center;
+
+  &__content {
+    margin-bottom: rem(40px);
+  }
+  &__heading {
+    margin-bottom: rem(10px);
+  }
+
+  &__text {
+    font-size: rem(15px);
+    max-width: clamp(18.875rem, 70vw + 1rem, 42rem);
+    margin: 0 auto;
+    line-height: 1.69;
+    color: var(--grayish-blue);
+  }
+
+  // tablet view --------------------------------------------------------------
+  @include respond-to("tablet") {
+    &__heading {
+      font-size: 2rem;
+      margin-bottom: rem(26px);
+    }
+
+    &__text {
+      max-width: 33.125rem;
+      line-height: 1.5;
+      font-size: rem(18px);
+    }
+  }
+}
