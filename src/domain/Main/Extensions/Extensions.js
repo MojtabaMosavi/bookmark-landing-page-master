@@ -1,5 +1,6 @@
 import React from "react";
 import data from "./extensions-data";
+import Extension from "./Extension/Extension";
 import "./extensions.scss";
 
 const Extensions = () => {
@@ -11,9 +12,15 @@ const Extensions = () => {
                     <p className="extensions__description">We’ve got more browsers in the pipeline. Please do let 
                     us know if you’ve got a favourite you’d like us to prioritize.</p>
                 </div>
-                <div className="extensions__chocies">
-
-                </div>
+                <ul className="extensions__chocies">
+                    {
+                        data.map((item,i)=> {
+                            return(
+                                <Extension {...item} key={i}/>
+                            )
+                        })
+                    }
+                </ul>
             </div>
         </section>
     );

@@ -20,6 +20,12 @@
     color: var(--grayish-blue);
   }
 
+  &__chocies {
+    display: grid;
+    grid-template: repeat(3, 1fr) / 1fr;
+    gap: rem(37px);
+  }
+
   // tablet-------------------------------------------------------------------
   @include respond-to("tablet") {
     &__heading {
@@ -30,6 +36,46 @@
     &__description {
       max-width: rem(550px);
       font-size: rem(18px);
+    }
+
+    &__chocies {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      grid-template-rows: repeat(2, 1fr);
+      gap: 1rem;
+      justify-items: center;
+      align-items: center;
+    }
+  }
+
+  // laptop--------------------------------------------------------
+  @include respond-to("laptop") {
+    &__content {
+      margin-bottom: rem(50px);
+    }
+
+    &__chocies {
+      grid-template: 1fr / 1fr 1fr 1fr;
+      gap: 0 rem(6px);
+      align-items: start;
+      justify-items: end;
+      min-height: 28rem;
+
+      & > :nth-child(2) {
+        place-self: center;
+      }
+
+      & > :last-child {
+        align-self: end;
+        justify-self: start;
+      }
+    }
+  }
+
+  // desktop----------------------------------------------------------
+  @include respond-to("desktop") {
+    &__chocies {
+      gap: 0;
     }
   }
 }
