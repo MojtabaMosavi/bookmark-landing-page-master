@@ -3,6 +3,7 @@
 
 .extensions {
   text-align: center;
+  margin-bottom: rem(141px);
 
   &__content {
     margin-bottom: rem(39px);
@@ -50,6 +51,7 @@
 
   // laptop--------------------------------------------------------
   @include respond-to("laptop") {
+    margin-bottom: 10.8125rem;
     &__content {
       margin-bottom: rem(50px);
     }

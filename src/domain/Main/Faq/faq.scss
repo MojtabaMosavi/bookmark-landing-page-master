@@ -1,0 +1,78 @@
+@use "../../../assets/styles/abstracts/functions" as *;
+@use "../../../assets/styles/abstracts/mixins" as *;
+
+.faq {
+  margin-bottom: 8rem;
+
+  &__header {
+    text-align: center;
+    max-width: 34rem;
+    margin: 0 auto rem(50px) auto;
+  }
+
+  &__heading {
+    font-size: rem(24px);
+    margin: 0 auto rem(19px) auto;
+    padding: 0 1rem;
+  }
+
+  &__description {
+    font-size: rem(15px);
+    line-height: 1.7;
+    color: var(--grayish-blue);
+  }
+
+  &__cta {
+    padding: 1rem 1.3rem;
+    margin: 0 auto;
+    display: block;
+    border-radius: 0.5rem;
+    max-width: 7rem;
+    color: var(--white);
+    font-size: rem(15px);
+    border: 2px solid transparent;
+    position: relative;
+    transition: all 1s ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--soft-blue);
+      z-index: -1;
+      border-radius: inherit;
+      transition: width 0.5s ease-in-out;
+    }
+
+    &:hover {
+      outline: none;
+      color: var(--soft-blue);
+      background: var(--white);
+      border-color: var(--soft-blue);
+
+      &::before {
+        width: 0;
+      }
+    }
+  }
+
+  // laptop view-------------------------------------------------
+  @include respond-to("laptop") {
+    &__header {
+      margin-bottom: rem(55px);
+    }
+
+    &__heading {
+      font-size: 2rem;
+    }
+
+    &__description {
+      font-size: rem(18px);
+      padding: 0 2px;
+      line-height: 1.8rem;
+    }
+  }
+}

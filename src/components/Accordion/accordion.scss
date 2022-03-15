@@ -1,0 +1,79 @@
+@use "../../assets/styles/abstracts/functions" as *;
+@use "../../assets/styles/abstracts/mixins" as *;
+
+.accordion {
+  @include flexify($al-con: start, $js-con: space-between, $flex-d: column);
+  min-height: rem(252px);
+  margin: 0 auto rem(65px) auto;
+  max-width: 34rem;
+
+  &__item {
+    border-bottom: 1px solid var(--grayish-blue);
+  }
+
+  &__control {
+    font-size: rem(15px);
+    padding: rem(20px) 0 rem(20px) rem(4px);
+    border-bottom: 1px solid red;
+    width: 100%;
+    text-align: left;
+    border: none;
+    background: transparent;
+    position: relative;
+    letter-spacing: rem(0.3px);
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: rem(7px);
+      top: rem(-7px);
+      width: rem(18px);
+      height: rem(63px);
+      background: url("./icon-arrow.svg") center/contain no-repeat;
+      transition: transform 0.5s ease-in-out;
+    }
+    // active state-------------------------------
+    &--active {
+      &::after {
+        transform: rotate(180deg);
+
+        filter: invert(52%) sepia(8%) saturate(4302%) hue-rotate(315deg)
+          brightness(98%) contrast(101%);
+      }
+    }
+
+    &:hover {
+      color: var(--soft-red);
+    }
+  }
+
+  &__content {
+    max-height: 0;
+    overflow: hidden;
+    color: var(--grayish-blue);
+    transition: max-height, padding 0.5s ease-in-out;
+    line-height: 1.9;
+    font-size: rem(16px);
+
+    &--visible {
+      max-height: 50rem;
+      height: auto;
+      animation-name: fadeIn;
+      animation-duration: 2s;
+      padding: rem(21px) rem(5px) rem(21px) rem(3px);
+    }
+  }
+
+  // laptop view------------------------------------------------
+  @include respond-to("laptop") {
+    &__control {
+      font-size: rem(18px);
+      padding: rem(25px) 0;
+
+      &::after {
+        right: rem(28px);
+        top: 0;
+      }
+    }
+  }
+}
