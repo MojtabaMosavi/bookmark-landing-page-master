@@ -4,7 +4,7 @@
 .accordion {
   @include flexify($al-con: start, $js-con: space-between, $flex-d: column);
   min-height: rem(252px);
-  margin: 0 auto rem(65px) auto;
+  margin: 0 auto rem(46px) auto;
   max-width: 34rem;
 
   &__item {

@@ -1,0 +1,223 @@
+@use "../../../assets/styles/abstracts/functions" as *;
+@use "../../../assets/styles/abstracts/mixins" as *;
+
+.sign-up {
+  background: var(--soft-blue);
+  color: var(--white);
+  text-align: center;
+  padding-bottom: 10px;
+
+  &__stats {
+    display: inline-block;
+    margin: rem(71px) 0 rem(14px) 0;
+    letter-spacing: rem(4px);
+    font-size: rem(13px);
+    text-transform: uppercase;
+    word-spacing: rem(3px);
+  }
+
+  &__form {
+    max-width: rem(313px);
+    margin: 0 auto;
+  }
+
+  &__label {
+    font-size: rem(24px);
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: rem(31px);
+  }
+
+  &__input-wrapper {
+    margin-bottom: rem(15px);
+    position: relative;
+
+    /* success and error modifier on the cta__input-wrapper control
+    *  the state of validation for all it's child elements   
+    */
+
+    // common styles for error and success modifier
+    &--error,
+    &--success {
+      &::after,
+      &::before {
+        position: absolute;
+        right: rem(15px);
+        top: rem(102px);
+        width: rem(20px);
+        animation: zoomIn;
+        animation-duration: 1s;
+      }
+    }
+
+    &--none {
+      .sign-up__status {
+        display: none;
+      }
+
+      .sign-up__input {
+        margin-bottom: rem(14px);
+      }
+    }
+
+    &--error,
+    &--success {
+      .sign-up__input {
+        margin-bottom: 0;
+      }
+    }
+
+    // error modifier
+    &--error {
+      .sign-up__input {
+        border: 3px solid var(--soft-red);
+        border-radius: 5px 5px 0 0;
+        transition: border 1s ease-in-out;
+      }
+
+      .sign-up__status {
+        display: inline-block;
+      }
+
+      &::after {
+        content: url("./icon-error.svg");
+      }
+    }
+
+    // success modifier
+    &--success {
+      .sign-up__status {
+        display: none;
+      }
+
+      &::before {
+        content: url("./icon-check.png");
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding: rem(14px) rem(17px);
+    font-size: rem(15px);
+    border-radius: 0.5rem;
+    border: none;
+    margin-bottom: 10px;
+
+    &:focus {
+      outline-offset: -0.25rem;
+    }
+  }
+
+  &__status {
+    animation: fadeInDown;
+    animation-duration: 1s;
+    display: inline-block;
+    background: var(--soft-red);
+    width: 100%;
+    border-bottom-left-radius: rem(5px);
+    border-bottom-right-radius: rem(5px);
+    text-align: left;
+    padding: rem(5px) rem(9px);
+    font-size: rem(11px);
+    margin-bottom: rem(14px);
+  }
+
+  &__btn {
+    border: 2px solid var(--soft-red);
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: rem(15px);
+    font-weight: 700;
+    border-radius: rem(6px);
+    margin-bottom: rem(34px);
+    position: relative;
+    color: var(--white);
+    transition: all 1s ease-in-out;
+    z-index: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--soft-red);
+      z-index: -1;
+      transition: height 0.5s ease-in-out;
+    }
+
+    &:hover,
+    &:focus {
+      color: var(--soft-red);
+      background: var(--white);
+
+      &::before {
+        height: 0;
+      }
+    }
+  }
+
+  // ltablet view-------------------------------------------------------------------
+  @include respond-to("tablet") {
+    padding-bottom: 3rem;
+
+    &__stats {
+      margin: rem(68px) 0 rem(35px) 0;
+      word-spacing: rem(1px);
+      letter-spacing: rem(3.7px);
+      font-size: rem(15px);
+    }
+
+    &__form {
+      max-width: rem(445px);
+    }
+
+    &__label {
+      font-size: 2rem;
+      margin-bottom: rem(39px);
+      grid-area: text;
+    }
+
+    &__input-wrapper {
+      display: grid;
+      grid-template:
+        [row1-start] "text text text" 1fr [row1-end]
+        [row2-start] "signup signup btn" auto [row2-end]
+        [row3-start] "status status ." auto [row3-end]/ 1fr 1fr 1fr;
+
+      &--error,
+      &--success {
+        &::before {
+          right: 163px;
+          top: 125px;
+        }
+
+        &::after {
+          right: 163px;
+          top: 129px;
+        }
+      }
+    }
+
+    &__input {
+      grid-area: signup;
+      max-height: rem(50px);
+      margin-bottom: 0;
+    }
+
+    &__status {
+      grid-area: status;
+    }
+
+    &__btn {
+      grid-area: btn;
+      margin-bottom: 0;
+      max-height: 48px;
+      max-width: 126px;
+      margin-left: auto;
+      padding: 10px;
+    }
+  }
+}
