@@ -49,9 +49,19 @@ Users should be able to:
 - Scss 
 - Webpack 
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
+
+1- In this project I used a new directory structure where all files related to a component are grouped togather: 
+```
+foo:
+  index.js 
+  foo.scss 
+  foo.test.js
+  foo.js
+  foo-icon.svg
+  foo-data.json
+```
 
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 
