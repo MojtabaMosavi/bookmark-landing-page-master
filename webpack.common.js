@@ -1,5 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const WebPack = require("webpack");
 
 module.exports = {
     entry:{
@@ -21,7 +23,8 @@ module.exports = {
     
     // plugings---------------------------------- 
     plugins:[
-        new HtmlWebpackPlugin({template:"./src/index.html", inject:true})
+        new HtmlWebpackPlugin({template:"./src/index.html", inject:true}),
+        new BundleAnalyzerPlugin(),
     ],
 
     // loader------------------------------------
@@ -62,4 +65,10 @@ module.exports = {
             }
         ]
     },
+
+    optimization:{
+        splitChunks:{
+            chunks:"all"
+        }
+    }
 }
