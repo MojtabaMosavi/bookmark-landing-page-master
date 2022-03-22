@@ -63,7 +63,17 @@ foo:
   foo-data.json
 ```
 
-2- As the size of a project grows you end up doing import of type ``` import foo from "../../../components/componentName/component"```which is a mothful to type, a elegant solution to this pro
+2- As the size of a project grows you end up doing import of type ``` import foo from "../../../components/componentName/component"``` which is a mothful to type, a elegant solution to this problem is to use aliases, in webpack config you can add
+```js
+module.exports ={
+ resolve:{
+  alias:{
+    Components: path.resolve(__dirname,"src/components")
+  }
+ }
+}
+```
+And instead of that long string you type ```js import foo from "Components/foo/foo.js"```. In in a small project this might not be a headache but as the project grows alises can save you alot of redundant typing. 
 
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 
