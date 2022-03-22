@@ -74,7 +74,8 @@ And instead of that long string you type ```js import foo from "Components/foo/f
 3- Using react's property validation feature you can validate props of each component to make sure it has the right type, one major benefits of doing property validation is that debugging becomes much easier since react flags the presence of wrong prop type.You need to install the "prop-types" npm package and the syntax is:
 ```js 
 Component.prototype = {
-  propName: PropTypes.tpye.(optional/isRequired)
+  propName: PropTypes.tpye
+  propName1: PropTypes.type.isRequired
 }
 
 ```
