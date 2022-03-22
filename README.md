@@ -24,11 +24,11 @@ Users should be able to:
 
 ### Screenshot
 
-![](./desktop-design.jpg)
+![](./design/desktop-design.jpg)
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://bookmark-landing-page-master1.netlify.app/)
+- Live Site URL: [https://bookmark-landing-page-master1.netlify.app/](https://bookmark-landing-page-master1.netlify.app/)
 
 ## My process
 
