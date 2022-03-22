@@ -4,8 +4,8 @@
   "description": "![Design preview for the Bookmark landing page coding challenge](./design/desktop-preview.jpg)",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.dev --open",
     "build": "webpack --config webpack.prod",
+    "start": "webpack-dev-server --config webpack.dev --open",
     "test": "jest --watch"
   },
   "keywords": [],
