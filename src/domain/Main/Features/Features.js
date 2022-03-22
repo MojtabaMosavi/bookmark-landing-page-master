@@ -1,5 +1,5 @@
 import React from "react";
-import Slider from "Components/Slider/slider";
+import Slider from "Components/Slider/Slider";
 import data from "./Feature-data";
 import "./features.scss";
 

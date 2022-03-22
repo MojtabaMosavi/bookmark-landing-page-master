@@ -1,7 +1,7 @@
 import React from "react";
 import Hero from "./Hero/Hero";
 import Features from "./Features/Features";
-import Extensions from "./extensions/Extensions";
+import Extensions from "./Extensions/Extensions";
 import Faq from "./Faq/Faq";
 import SignUp from "./SignUp/SignUp";
 import "./main.scss";
