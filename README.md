@@ -52,7 +52,7 @@ Users should be able to:
 
 ### What I learned
 
-1- In this project I used a new directory structure where all files related to a component are grouped togather: 
+1- In this project I used a new directory structure where all files related to a component are grouped togather which is dependent on existence of webpack loaders to process each of these assets. One of advantages fo using this pattern is that the component becomes more and easer to resue since you can do simple component an past if you want to use these component in other projects.
 ```
 foo:
   index.js 
@@ -62,6 +62,8 @@ foo:
   foo-icon.svg
   foo-data.json
 ```
+
+2- As the size of a project grows you end up doing import of type ``` import foo from "../../../components/componentName/component"```which is a mothful to type, a elegant solution to this pro
 
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 
