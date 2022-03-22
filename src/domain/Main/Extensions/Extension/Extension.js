@@ -1,6 +1,6 @@
 import React from "react";
 import PropType from "prop-types";
-import "./extension.scss";
+import "./Extension.scss";
 
 
 const Extension = ({icon,browser,browserVersion,ctaText}) => {
