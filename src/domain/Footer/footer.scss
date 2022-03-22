@@ -1,0 +1,129 @@
+@use "../../assets/styles/abstracts/functions" as *;
+@use "../../assets/styles/abstracts/mixins" as *;
+
+.footer {
+  text-align: center;
+  background: var(--very-dark-blue);
+  color: var(--white);
+
+  &__wrapper {
+    padding: rem(43px);
+  }
+
+  &__logo {
+    display: inline-block;
+    margin-bottom: 2rem;
+
+    &:hover {
+      outline-color: var(--white);
+    }
+  }
+
+  &__menu {
+    margin-bottom: rem(46px);
+  }
+
+  &__item {
+    margin-bottom: rem(30px);
+  }
+
+  &__link {
+    color: var(--white);
+    font-size: rem(17px);
+    text-transform: uppercase;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: rem(25px);
+      width: 100%;
+      height: rem(2px);
+      background: var(--soft-red);
+      transition: transform 0.5s ease-in-out;
+      transform: scale(0);
+      transform-origin: center;
+    }
+
+    &:hover {
+      outline: none;
+      color: var(--soft-red);
+
+      &::after {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__icons {
+    @include flexify($al-con: center, $js-con: center);
+    &-item {
+      &:hover {
+        animation: tada;
+        animation-duration: 1s;
+
+        & > .footer__icon-link > img {
+          transition: filter 0.5s ease-in-out;
+          filter: invert(47%) sepia(59%) saturate(1597%) hue-rotate(327deg)
+            brightness(97%) contrast(103%);
+        }
+      }
+    }
+
+    &-item + &-item {
+      margin-left: rem(40px);
+    }
+  }
+
+  &__icon-link {
+    &:hover {
+      .footer__icon-link > img {
+        filter: brightness(150%);
+      }
+    }
+  }
+
+  // tablet view-------------------------------------------------------------------
+  @include respond-to("tablet") {
+    &__wrapper {
+      margin-bottom: 0;
+      padding: rem(30px) 0;
+      @include flexify($al-con: center, $js-con: none);
+    }
+
+    &__logo {
+      margin-bottom: 0;
+    }
+
+    &__menu {
+      margin-bottom: 0;
+      margin-left: rem(10px);
+      @include flexify($al-con: center, $js-con: space-between);
+    }
+
+    &__item {
+      margin-bottom: 0;
+
+      & + & {
+        margin-left: 44px;
+      }
+    }
+
+    &__link {
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    &__icons {
+      margin-left: auto;
+    }
+  }
+
+  // laptop view-------------------------------------------------------------------
+  @include respond-to("laptop") {
+    &__menu {
+      margin-left: rem(58px);
+    }
+  }
+}
